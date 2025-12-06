@@ -550,6 +550,50 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         
         .animate-fadeInUp {
             animation: fadeInUp 0.8s ease-out;
@@ -558,6 +602,88 @@
         .animate-fadeIn {
             animation: fadeIn 1s ease-out;
         }
+
+        /* Scroll Animation Classes */
+        .scroll-animate {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-animate.animate {
+            opacity: 1;
+        }
+
+        .scroll-fade-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-fade-up.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-fade-down {
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-fade-down.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-fade-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-fade-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-fade-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-fade-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-scale.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .scroll-fade {
+            opacity: 0;
+            transition: opacity 1s ease-out;
+        }
+
+        .scroll-fade.animate {
+            opacity: 1;
+        }
+
+        /* Stagger animation delays for grid items */
+        .scroll-stagger-1 { transition-delay: 0.1s; }
+        .scroll-stagger-2 { transition-delay: 0.2s; }
+        .scroll-stagger-3 { transition-delay: 0.3s; }
+        .scroll-stagger-4 { transition-delay: 0.4s; }
+        .scroll-stagger-5 { transition-delay: 0.5s; }
+        .scroll-stagger-6 { transition-delay: 0.6s; }
         
         @media (max-width: 768px) {
             .card,
@@ -670,125 +796,148 @@
                 </p>
             </div>
 
-            <!-- Filter Tabs -->
-            <div style="display: flex; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="youtube">YouTube</button>
-                <button class="filter-btn" data-filter="commercial">Commercial</button>
-                <button class="filter-btn" data-filter="social">Social Media</button>
+            <!-- UGC Video Section -->
+            <div style="margin-bottom: 5rem;">
+                <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; color: white; text-align: center;">
+                    <span class="gradient-text">UGC Video</span>
+                </h3>
+                <div class="grid grid-cols-3">
+                    <!-- UGC Video Card 1 -->
+                    <div class="video-card" data-category="social">
+                        <div style="position: relative;">
+                            <iframe style="width: 100%; aspect-ratio: 9/16;" 
+                                src="https://drive.google.com/file/d/18q3fNbmgVPnVOimHpRV8XmZ4pCT4brP4/preview" 
+                                allow="autoplay" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">UGC Video</h3>
+                        </div>
+                    </div>
+
+                    <!-- UGC Video Card 2 -->
+                    <div class="video-card" data-category="social">
+                        <div style="position: relative;">
+                            <iframe style="width: 100%; aspect-ratio: 9/16;" 
+                                src="https://drive.google.com/file/d/17dCFxH2PLwbopN5FEmlCqCgIDPkZvH01/preview" 
+                                allow="autoplay" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">UGC Video</h3>
+                        </div>
+                    </div>
+
+                    <!-- UGC Video Card 3 -->
+                    <div class="video-card" data-category="social">
+                        <div style="position: relative;">
+                            <iframe style="width: 100%; aspect-ratio: 9/16;" 
+                                src="https://drive.google.com/file/d/1LaqV4RQE1EJS3cqRRH7LkSlZQDe6JFJx/preview" 
+                                allow="autoplay" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">UGC Video</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Video Grid -->
-            <div class="grid grid-cols-3">
-                <!-- Video Card 1 -->
-                <div class="video-card" data-category="commercial">
-                    <div style="position: relative;">
-                        <iframe style="width: 100%; aspect-ratio: 16/9;" 
-                            src="https://drive.google.com/file/d/1J-lzV0mRQPg0o7aVW1rd9JLAmrZxOLXU/preview" 
-                            allow="autoplay" frameborder="0" allowfullscreen></iframe>
+            <!-- Graphic Ads Section -->
+            <div style="margin-bottom: 5rem;">
+                <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; color: white; text-align: center;">
+                    <span class="gradient-text">Graphic Ads</span>
+                </h3>
+                <div class="grid grid-cols-3">
+                    <!-- Graphic Ad Card 1 -->
+                    <div class="video-card" data-category="commercial">
+                        <div style="position: relative;">
+                            <iframe style="width: 100%; aspect-ratio: 9/16;" 
+                                src="https://drive.google.com/file/d/1v2KEIgP0mZQ0tVZMBk8FEHyQBmNP6FaK/preview" 
+                                allow="autoplay" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Graphic Ad</h3>
+                        </div>
                     </div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Logo Video</h3>
-                    </div>
-                </div>
 
-                <!-- Video Card 2 -->
-                <div class="video-card" data-category="social">
-                    <div style="position: relative;">
-                        <iframe style="width: 100%; aspect-ratio: 16/9;" 
-                            src="https://drive.google.com/file/d/15zbB08wp1zz3UJjVfzccHLau54BV2GfX/preview" 
-                            allow="autoplay" frameborder="0" allowfullscreen></iframe>
+                    <!-- Graphic Ad Card 2 -->
+                    <div class="video-card" data-category="commercial">
+                        <div style="position: relative;">
+                            <iframe style="width: 100%; aspect-ratio: 9/16;" 
+                                src="https://drive.google.com/file/d/1aOp22EdYSkgX3-nvUl3hEZbdqSP94Alm/preview" 
+                                allow="autoplay" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Graphic Ad</h3>
+                        </div>
                     </div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Reel Edit</h3>
-                    </div>
-                </div>
 
-                <!-- Video Card 5.1 -->
-                <div class="video-card" data-category="social">
-                    <div style="position: relative;">
-                        <iframe style="width: 100%; aspect-ratio: 16/9;" 
-                            src="https://drive.google.com/file/d/1LXWMLxp04F9lOlI_f6U1jC9z7O-C897B/preview" 
-                            allow="autoplay" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Reel edit</h3>
-                    </div>
-                </div>
-                 <!-- Video Card 5.1 -->
-                <div class="video-card" data-category="social">
-                    <div style="position: relative;">
-                        <iframe style="width: 100%; aspect-ratio: 16/9;" 
-                            src="https://drive.google.com/file/d/1LekGCJzv1B0XeapJ0EpGnidPRpUoIiau/preview" 
-                            allow="autoplay" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Reel edit</h3>
+                    <!-- Graphic Ad Card 3 -->
+                    <div class="video-card" data-category="social">
+                        <div style="position: relative;">
+                            <iframe style="width: 100%; aspect-ratio: 9/16;" 
+                                src="https://drive.google.com/file/d/14tPblU7F34KtTsQCorx6WRXURz7bKW1f/preview" 
+                                allow="autoplay" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Graphic Ad</h3>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                 <!-- Video Card 5.1 -->
-                <div class="video-card" data-category="social">
-                    <div style="position: relative;">
-                        <iframe style="width: 100%; aspect-ratio: 16/9;" 
-                            src="https://drive.google.com/file/d/1Q9HoK_TWjZUEB1rfgS57yDpBQNQCl7Id/preview" 
-                            allow="autoplay" frameborder="0" allowfullscreen></iframe>
+            <!-- Few More Videos Section -->
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; color: white; text-align: center;">
+                    <span class="gradient-text">Few More Videos</span>
+                </h3>
+                <div class="grid grid-cols-3">
+                    <!-- Few More Video Card 1 -->
+                    <div class="video-card" data-category="youtube">
+                        <div style="position: relative;">
+                            <iframe style="width: 100%; aspect-ratio: 9/16;" 
+                                src="https://drive.google.com/file/d/1WOouXU_XeapKWG8euFt-6UF1u8J_VKK0/preview" 
+                                allow="autoplay" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Reel Edit</h3>
+                        </div>
                     </div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Real edit</h3>
+
+                    <!-- Few More Video Card 2 -->
+                    <div class="video-card" data-category="social">
+                        <div style="position: relative;">
+                            <iframe style="width: 100%; aspect-ratio: 9/16;" 
+                                src="https://drive.google.com/file/d/1LXWMLxp04F9lOlI_f6U1jC9z7O-C897B/preview" 
+                                allow="autoplay" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Reel Edit</h3>
+                        </div>
+                    </div>
+
+                    <!-- Few More Video Card 3 -->
+                    <div class="video-card" data-category="social">
+                        <div style="position: relative;">
+                            <iframe style="width: 100%; aspect-ratio: 9/16;" 
+                                src="https://drive.google.com/file/d/1pAAImn2FL5oqdrmv-vpsiCaiwNagrRoi/preview" 
+                                allow="autoplay" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Reel Edit</h3>
+                        </div>
+                    </div>
+
+                    <!-- Few More Video Card 4 -->
+                    <div class="video-card" data-category="social">
+                        <div style="position: relative;">
+                            <iframe style="width: 100%; aspect-ratio: 9/16;" 
+                                src="https://drive.google.com/file/d/15zbB08wp1zz3UJjVfzccHLau54BV2GfX/preview" 
+                                allow="autoplay" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Reel Edit</h3>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Video Card 3 -->
-                <div class="video-card" data-category="youtube">
-                    <div style="position: relative;">
-                        <iframe style="width: 100%; aspect-ratio: 16/9;" 
-                            src="https://drive.google.com/file/d/1CtWtJMXGE4jU66h2J8fUh7N5_9FWtiNb/preview" 
-                            allow="autoplay" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Documentary Video</h3>
-                    </div>
-                </div>
-
-                <!-- Video Card 4 -->
-                <div class="video-card" data-category="social">
-                    <div style="position: relative;">
-                        <iframe style="width: 100%; aspect-ratio: 16/9;" 
-                            src="https://drive.google.com/file/d/1saOT4R3gBM5HdKOwB5NM1bfoddRh2cSB/preview" 
-                            allow="autoplay" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Reel Edit</h3>
-                    </div>
-                </div>
-
-                <!-- Video Card 5 -->
-                <div class="video-card" data-category="social">
-                    <div style="position: relative;">
-                        <iframe style="width: 100%; aspect-ratio: 16/9;" 
-                            src="https://drive.google.com/file/d/1pAAImn2FL5oqdrmv-vpsiCaiwNagrRoi/preview" 
-                            allow="autoplay" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Reel Edit</h3>
-                    </div>
-                </div>
-
-                <!-- Video Card 6 -->
-                <div class="video-card" data-category="commercial">
-                    <div style="position: relative;">
-                        <iframe style="width: 100%; aspect-ratio: 16/9;" 
-                            src="https://drive.google.com/file/d/1oqACvpjkNtW5U7RjBec13Xn3wTmAjYDD/preview" 
-                            allow="autoplay" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Haldi Edit</h3>
-                    </div>
-                </div>
-
-                <!-- Video Card 7 -->
-                
             </div>
         </div>
     </section>
@@ -891,7 +1040,7 @@
                     </div>
                     <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: white;">YouTube Editing</h3>
                     <p style="color: #cccccc; margin-bottom: 1.5rem; line-height: 1.6;">Complete YouTube video editing and engagement optimization.</p>
-                    <div style="color: #dc2626; font-weight: 700; font-size: 1.1rem;">Starting at $20</div>
+                    <!-- <div style="color: #dc2626; font-weight: 700; font-size: 1.1rem;">Starting at $20</div> -->
                 </div>
 
                 <!-- Service 2 -->
@@ -901,7 +1050,7 @@
                     </div>
                     <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: white;">Commercial Production</h3>
                     <p style="color: #cccccc; margin-bottom: 1.5rem; line-height: 1.6;">Professional commercial editing with advanced color grading, motion graphics, and cinematic quality.</p>
-                    <div style="color: #dc2626; font-weight: 700; font-size: 1.1rem;">Starting at $35</div>
+                    <!-- <div style="color: #dc2626; font-weight: 700; font-size: 1.1rem;">Starting at $35</div> -->
                 </div>
 
                 <!-- Service 3 -->
@@ -911,7 +1060,7 @@
                     </div>
                     <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: white;">Social Media Content</h3>
                     <p style="color: #cccccc; margin-bottom: 1.5rem; line-height: 1.6;">Short-form content for Instagram, TikTok, and other social platforms with trending effects.</p>
-                    <div style="color: #dc2626; font-weight: 700; font-size: 1.1rem;">Starting at $15-20</div>
+                    <!-- <div style="color: #dc2626; font-weight: 700; font-size: 1.1rem;">Starting at $15-20</div> -->
                 </div>
             </div>
         </div>
@@ -967,7 +1116,7 @@
                         <div style="padding-top: 2rem;">
                             <div style="font-weight: 600; margin-bottom: 1rem; color: white;">Follow Me</div>
                             <div style="display: flex; gap: 1rem;">
-                                <a href="#" class="social-icon">
+                                <a href="https://www.instagram.com/mayankfilmz/" class="social-icon">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                                 <a href="#" class="social-icon">
@@ -1159,6 +1308,115 @@
         }
         window.addEventListener('resize', handleResize);
         handleResize();
+
+        // Scroll Animation with Intersection Observer (Framer Motion style)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    // Optional: Unobserve after animation to improve performance
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with scroll animation classes
+        const animateElements = document.querySelectorAll(
+            '.scroll-fade-up, .scroll-fade-down, .scroll-fade-left, .scroll-fade-right, .scroll-scale, .scroll-fade'
+        );
+        
+        animateElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        // Stagger animation for grid items (portfolio cards, services, etc.)
+        const staggerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const children = entry.target.querySelectorAll('.video-card, .card');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.add('animate');
+                        }, index * 100); // 100ms delay between each item
+                    });
+                    staggerObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Apply stagger animation to portfolio sections
+        const portfolioSections = document.querySelectorAll('#portfolio > .container > div');
+        portfolioSections.forEach(section => {
+            const grid = section.querySelector('.grid');
+            if (grid) {
+                // Add scroll-fade-up to all cards initially
+                grid.querySelectorAll('.video-card').forEach(card => {
+                    card.classList.add('scroll-fade-up');
+                });
+                staggerObserver.observe(grid);
+            }
+        });
+
+        // Animate service cards
+        const servicesGrid = document.querySelector('#services .grid');
+        if (servicesGrid) {
+            servicesGrid.querySelectorAll('.card').forEach((card, index) => {
+                card.classList.add('scroll-scale');
+                card.style.transitionDelay = `${index * 0.1}s`;
+            });
+            staggerObserver.observe(servicesGrid);
+        }
+
+        // Animate about section
+        const aboutSection = document.querySelector('#about');
+        if (aboutSection) {
+            const aboutContent = aboutSection.querySelector('.grid');
+            if (aboutContent) {
+                const leftCol = aboutContent.children[0];
+                const rightCol = aboutContent.children[1];
+                if (leftCol) {
+                    leftCol.classList.add('scroll-fade-right');
+                    observer.observe(leftCol);
+                }
+                if (rightCol) {
+                    rightCol.classList.add('scroll-fade-left');
+                    observer.observe(rightCol);
+                }
+            }
+        }
+
+        // Animate contact section
+        const contactSection = document.querySelector('#contact');
+        if (contactSection) {
+            const contactGrid = contactSection.querySelector('.grid');
+            if (contactGrid) {
+                contactGrid.querySelectorAll('> div').forEach((col, index) => {
+                    col.classList.add(index === 0 ? 'scroll-fade-right' : 'scroll-fade-left');
+                    observer.observe(col);
+                });
+            }
+        }
+
+        // Animate section headings
+        document.querySelectorAll('section h2, section h3').forEach((heading, index) => {
+            if (!heading.closest('.card') && !heading.closest('.video-card')) {
+                heading.classList.add('scroll-fade-down');
+                observer.observe(heading);
+            }
+        });
+
+        // Animate stats in hero section
+        const heroStats = document.querySelectorAll('.stat-number');
+        heroStats.forEach((stat, index) => {
+            stat.parentElement.classList.add('scroll-scale');
+            stat.parentElement.style.transitionDelay = `${index * 0.15}s`;
+            observer.observe(stat.parentElement);
+        });
     </script>
 
     
